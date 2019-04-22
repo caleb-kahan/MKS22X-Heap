@@ -35,7 +35,7 @@ public class HeapPrinter{
 	}
   public static void main(String [] args){
     int [] a = new int[]{4,3,7,1,2,7,8,9,4,6,3,5,2,6};
-    heapify(a);
+    MyHeap.heapify(a);
     print(a);
   }
 }
