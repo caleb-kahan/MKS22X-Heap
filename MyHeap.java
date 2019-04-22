@@ -7,13 +7,18 @@ public class MyHeap{
 
     while(childAIndex < size && childBIndex < size && (childAValue < data[index] || childBValue < data[index])){
       if(childAValue>childBValue){
-
+        swap(data, childAIndex, index);
+        index = childAIndex;
       }
       else{
-        
+        swap(data, childBIndex, index);
+        index = childBIndex;
       }
+      childAIndex = index * 2 + 1;
+      childBIndex = index * 2 + 2;
+      childAValue = data[childAIndex];
+      childBValue = data[childBIndex];
     }
-
   }
   private static void pushUp(int[]data,int index){
 
