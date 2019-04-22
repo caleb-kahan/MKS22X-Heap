@@ -30,8 +30,7 @@ public class MyHeap{
     }
   }
   public static void heapify(int[] data){
-    //findStartingIndex(data.length)
-    for(int i = data.length;i>=0;i--) pushDown(data, data.length, i);
+    for(int i = findStartingIndex(data.length);i>=0;i--) pushDown(data, data.length, i);
   }
   public static void heapsort(int[] data){
     heapify(data);
@@ -42,8 +41,10 @@ public class MyHeap{
   }
   public static int findStartingIndex(int size){
     int power = (int)(Math.log(size)/Math.log(2));
-    power-=1;
-    return (int)(Math.pow(2,power))-2;
+    System.out.println(power);
+    int returner = (int)(Math.pow(2,power))-2;
+    System.out.println(returner);
+    return returner;
   }
   public static void swap(int[] data, int index1, int index2){
     int temp = data[index1];
