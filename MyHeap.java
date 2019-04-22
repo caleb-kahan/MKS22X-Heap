@@ -1,5 +1,18 @@
 public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
+    int childAIndex = index * 2 + 1;
+    int childBIndex = index * 2 + 2;
+    int childAValue = data[childAIndex];
+    int childBValue = data[childBIndex];
+
+    while(childAIndex < size && childBIndex < size && (childAValue < data[index] || childBValue < data[index])){
+      if(childAValue>childBValue){
+
+      }
+      else{
+        
+      }
+    }
 
   }
   private static void pushUp(int[]data,int index){
