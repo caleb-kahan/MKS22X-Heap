@@ -5,7 +5,7 @@ public class MyHeap{
     int childAValue = data[childAIndex];
     int childBValue = data[childBIndex];
 
-    while(childAIndex < size && childBIndex < size && (childAValue < data[index] || childBValue < data[index])){
+    while(childAIndex < size && childBIndex < size && (childAValue > data[index] || childBValue > data[index])){
       if(childAValue>childBValue){
         swap(data, childAIndex, index);
         index = childAIndex;
@@ -21,7 +21,15 @@ public class MyHeap{
     }
   }
   private static void pushUp(int[]data,int index){
+    int parentIndex = (index+1) / 2 - 1;
+    int parentValue = data[parentIndex];
 
+    while(parentIndex >=0 && parentValue < data[index]){
+      swap(data, parentIndex, index);
+      index = parentIndex;
+      parentIndex = (index+1) / 2 - 1;
+      parentValue = data[parentIndex];
+    }
   }
   public static void heapify(int[] data){
 
