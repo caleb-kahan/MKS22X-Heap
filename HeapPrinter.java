@@ -37,5 +37,10 @@ public class HeapPrinter{
     int [] a = new int[]{4,3,7,1,2,7,8,9,4,6,3,5,2,6};
     MyHeap.heapify(a);
     print(a);
+    a = new int[]{4,3,7,1,2,7,8,9,4,6,3,5,2,6};
+    MyHeap.heapsort(a);
+    for(int x: a){
+      System.out.print(x + " ");
+    }
   }
 }

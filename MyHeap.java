@@ -34,17 +34,14 @@ public class MyHeap{
   }
   public static void heapsort(int[] data){
     heapify(data);
-    for(int size = data.length;size>0;size--){
+    for(int size = data.length;size>1;size--){
       swap(data, 0, size - 1);
-      pushDown(data,size-1,0);
+      pushDown(data,size,0);
     }
   }
   public static int findStartingIndex(int size){
     int power = (int)(Math.log(size)/Math.log(2));
-    System.out.println(power);
-    int returner = (int)(Math.pow(2,power))-2;
-    System.out.println(returner);
-    return returner;
+    return (int)(Math.pow(2,power))-2;
   }
   public static void swap(int[] data, int index1, int index2){
     int temp = data[index1];
