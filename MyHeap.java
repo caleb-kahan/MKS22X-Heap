@@ -3,7 +3,7 @@ public class MyHeap{
     int childAIndex = index * 2 + 1;
     int childBIndex = index * 2 + 2;
 
-    while(childAIndex < size && childBIndex < size) && ( data[childAIndex] > data[index] || data[childBIndex] > data[index])){
+    while(childAIndex < size && childBIndex < size && ( data[childAIndex] > data[index] || data[childBIndex] > data[index])){
 
       if(data[childAIndex]>data[childBIndex]){
         swap(data, childAIndex, index);
@@ -30,7 +30,8 @@ public class MyHeap{
     }
   }
   public static void heapify(int[] data){
-    for(int i = findStartingIndex(data.length);i>=0;i--) pushDown(data, data.length, i);
+    //findStartingIndex(data.length)
+    for(int i = data.length;i>=0;i--) pushDown(data, data.length, i);
   }
   public static void heapsort(int[] data){
     heapify(data);
