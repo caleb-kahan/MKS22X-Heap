@@ -3,7 +3,7 @@ public class MyHeap{
     int childAIndex = index * 2 + 1;
     int childBIndex = index * 2 + 2;
 
-    while(data[childAIndex] > data[index] || data[childBIndex] > data[index] && (childAIndex < size && childBIndex < size)){
+    while(childAIndex < size && childBIndex < size) && ( data[childAIndex] > data[index] || data[childBIndex] > data[index])){
 
       if(data[childAIndex]>data[childBIndex]){
         swap(data, childAIndex, index);
