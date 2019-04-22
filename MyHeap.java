@@ -2,10 +2,8 @@ public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
     int childAIndex = index * 2 + 1;
     int childBIndex = index * 2 + 2;
-    int childAValue = data[childAIndex];
-    int childBValue = data[childBIndex];
 
-    while(childAValue > data[index] || childBValue > data[index] && (childAIndex < size && childBIndex < size)){
+    while(data[childAIndex] > data[index] || data[childBIndex] > data[index] && (childAIndex < size && childBIndex < size)){
 
       if(data[childAIndex]>data[childBIndex]){
         swap(data, childAIndex, index);
@@ -17,7 +15,7 @@ public class MyHeap{
       }
       childAIndex = index * 2 + 1;
       childBIndex = index * 2 + 2;
-      
+
     }
   }
   private static void pushUp(int[]data,int index){
