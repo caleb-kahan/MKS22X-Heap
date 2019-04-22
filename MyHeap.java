@@ -32,10 +32,14 @@ public class MyHeap{
     }
   }
   public static void heapify(int[] data){
-    for(int i = findStartingIndex(data.length);i>=0;i++) pushDown(data, data.length; i);
+    for(int i = findStartingIndex(data.length);i>=0;i--) pushDown(data, data.length; i);
   }
   public static void heapsort(int[] data){
-    
+    heapify(data);
+    for(int size = data.length;size>0;size--){
+      swap(data, 0, size - 1);
+      pushDown(data,size-1,0);
+    }
   }
   public static int findStartingIndex(int size){
     int power = (int)(Math.log(size)/Math.log(2));
