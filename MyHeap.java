@@ -3,9 +3,8 @@ public class MyHeap{
     int childAIndex = index * 2 + 1;
     int childBIndex = index * 2 + 2;
 
-    while(childAIndex < size && childBIndex < size && ( data[childAIndex] > data[index] || data[childBIndex] > data[index])){
-
-      if(data[childAIndex]>data[childBIndex]){
+    while(childAIndex < size && data[childAIndex] > data[index] ||  childBIndex < size &&  data[childBIndex] > data[index]){
+      if(childBIndex>=size || data[childAIndex]>data[childBIndex]){
         swap(data, childAIndex, index);
         index = childAIndex;
       }
@@ -18,7 +17,7 @@ public class MyHeap{
 
     }
   }
-  private static void pushUp(int[]data,int index){
+  public static void pushUp(int[]data,int index){
     int parentIndex = (index+1) / 2 - 1;
     while(parentIndex >=0 && data[parentIndex] < data[index]){
       swap(data, parentIndex, index);
@@ -33,7 +32,7 @@ public class MyHeap{
     heapify(data);
     for(int size = data.length;size>1;size--){
       swap(data, 0, size - 1);
-      pushDown(data,size,0);
+      pushDown(data,size-1,0);
     }
   }
   public static int findStartingIndex(int size){

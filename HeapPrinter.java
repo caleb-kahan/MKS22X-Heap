@@ -36,11 +36,16 @@ public class HeapPrinter{
   public static void main(String [] args){
     int [] a = new int[]{4,3,7,1,2,7,8,9,4,6,3,5,2,6};
     MyHeap.heapify(a);
-    print(a);
+    //print(a);
     a = new int[]{4,3,7,1,2,7,8,9,4,6,3,5,2,6};
     MyHeap.heapsort(a);
     for(int x: a){
       System.out.print(x + " ");
     }
+    int [] b = new int []{80,39,60,17,21,32,50,8,9,16,15,16,70,27,26};
+    MyHeap.pushUp(b,12);
+    System.out.println();
+    System.out.println();
+    //print(b);
   }
 }
